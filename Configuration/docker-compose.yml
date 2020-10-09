@@ -1,0 +1,19 @@
+version: '3'
+services:
+    flask:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        image: python:latest
+        container_name: flask
+        volumes:
+            - ./code/:/code/
+        networks:
+            net:
+                aliases:
+                    - flask-app
+        ports:
+            - "5000:5000"
+
+networks:
+    net:
