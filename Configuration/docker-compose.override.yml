@@ -2,6 +2,6 @@ version: '3'
 services:
     flask:
         environment: 
-            - "FLASK_APP=/code/index.py"
+            - "FLASK_APP=/code/app.py"
             - "FLASK_ENV=development"
         command: flask run --host=0.0.0.0
