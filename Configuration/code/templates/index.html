@@ -1,5 +1,37 @@
 {% extends "layout.html" %}
-{% block title %}Accueil{% endblock %}
+{% block title %}Index{% endblock %}
+
+{% block navbar %}
+<a class="navbar-brand" href="#">SNMP Project</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link active" href="/">Accueil <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" href="config.html">Configuration</a>
+    <a class="nav-item nav-link" href="#">Surveillance</a>
+  </div>
+</div>
+{% endblock %}
 {% block body %}
-    HelloWorld!
+    <h1 class="h1 text-dark">Dernières informations collectées</h1>
+    <table id="tab" class="display table table-light table-sm table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th rowspan="2" scope="col" id="name_header">Nom</th>
+                <th rowspan="2" scope="col" id="hour_header">Heure</th>
+                <th rowspan="2" scope="col" id="state_header">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for machine in machines %}
+                    <tr>
+                        <td>{{machine.nom }}</td>
+                        <td>{{machine.heure }}</td>
+                        <td>{{machine.status}}</td>
+                    </tr>
+            {%endfor%}
+        </tbody>
+    </table>
 {% endblock %}
