@@ -6,3 +6,4 @@ Flask-WTF>=0.14.2
 WTForms>=2.2.1
 Flask-Admin
 flask-marshmallow
+marshmallow-sqlalchemy

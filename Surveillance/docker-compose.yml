@@ -1,0 +1,14 @@
+version: '3'
+services:
+    go:
+        image: golang:latest
+        container_name:  go
+        volumes:
+            - .:/go/src/app
+        networks:
+            - default
+
+networks:
+    default:
+        external:
+            name: configuration_net

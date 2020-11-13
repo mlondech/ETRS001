@@ -9,6 +9,7 @@ from flask_admin.contrib.sqla import ModelView
 from marshmallow_sqlalchemy.fields import Nested
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'ggdwkjfceflekcsdcicoslek,c'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///configuration.db'
 app.config['FLASK_ADMIN_SWATCH'] = 'cerulean'
 db = SQLAlchemy(app)
