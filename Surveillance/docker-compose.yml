@@ -7,6 +7,7 @@ services:
             - .:/go/src/app
         networks:
             - default
+        command: go run /go/src/app/surveillance.go
 
 networks:
     default:
